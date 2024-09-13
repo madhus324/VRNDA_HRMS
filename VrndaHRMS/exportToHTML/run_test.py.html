@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>run_test.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+run_test.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">unittest</span>
+
+<span class="s0">from </span><span class="s1">Tests </span><span class="s0">import </span><span class="s1">test_Leave_Types</span>
+<span class="s0">from </span><span class="s1">Tests </span><span class="s0">import </span><span class="s1">test_Leave_Config</span>
+<span class="s0">from </span><span class="s1">Tests </span><span class="s0">import </span><span class="s1">test_Leave_Plan</span>
+
+<span class="s0">def </span><span class="s1">suite():</span>
+    <span class="s1">test_suite = unittest.TestSuite()</span>
+
+    <span class="s2"># Add test cases in the desired order</span>
+    <span class="s1">test_suite.addTest(unittest.makeSuite(test_Leave_Types))</span>
+    <span class="s1">test_suite.addTest(unittest.makeSuite(test_Leave_Config))</span>
+    <span class="s1">test_suite.addTest(unittest.makeSuite(test_Leave_Plan))</span>
+
+    <span class="s0">return </span><span class="s1">test_suite</span>
+
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s3">&quot;__main__&quot;</span><span class="s1">:</span>
+
+    <span class="s1">runner = unittest.TextTestRunner()</span>
+    <span class="s1">runner.run(suite())</span>
+</pre>
+</body>
+</html>

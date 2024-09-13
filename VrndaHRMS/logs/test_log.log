@@ -1,0 +1,44 @@
+2024-07-09 11:18:57,742 - WDM - INFO - ====== WebDriver manager ======
+2024-07-09 11:18:59,091 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:18:59,659 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:19:00,103 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:19:00,982 - WDM - INFO - WebDriver version 126.0.6478.126 selected
+2024-07-09 11:19:00,985 - WDM - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.126/win32/chromedriver-win32.zip
+2024-07-09 11:19:00,985 - WDM - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/126.0.6478.126/win32/chromedriver-win32.zip
+2024-07-09 11:19:01,553 - WDM - INFO - Driver downloading response is 200
+2024-07-09 11:19:01,830 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:19:02,341 - WDM - INFO - Driver has been saved in cache [C:\Users\Madhusudhan\.wdm\drivers\chromedriver\win64\126.0.6478.126]
+2024-07-09 11:19:08,578 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:19:08,578 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhan.mothkupally@vrnda.com
+2024-07-09 11:19:08,957 - PageObjects.Login - INFO - Attempting to log in with username: 88011@Madhu
+2024-07-09 11:29:53,604 - WDM - INFO - ====== WebDriver manager ======
+2024-07-09 11:29:54,477 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:29:54,897 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:29:55,268 - WDM - INFO - Driver [C:\Users\Madhusudhan\.wdm\drivers\chromedriver\win64\126.0.6478.126\chromedriver-win32/chromedriver.exe] found in cache
+2024-07-09 11:30:00,439 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:30:00,440 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhan.mothkupally@vrnda.com
+2024-07-09 11:30:00,586 - PageObjects.Login - INFO - Attempting to log in with username: 88011@Madhu
+2024-07-09 11:30:13,476 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:30:13,476 - PageObjects.Login - INFO - Attempting to log in with username: Bhaskers@vrnda.com
+2024-07-09 11:30:13,568 - PageObjects.Login - INFO - Attempting to log in with username: Admin@1234
+2024-07-09 11:30:26,103 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:30:26,103 - PageObjects.Login - INFO - Attempting to log in with username: Rakesh.narra@vrnda.com
+2024-07-09 11:30:26,216 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:30:26,217 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhan.mothkupally@vrnda.com
+2024-07-09 11:30:26,247 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:30:26,247 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhanmothkupally@vrnda.com
+2024-07-09 11:30:58,731 - WDM - INFO - ====== WebDriver manager ======
+2024-07-09 11:30:59,585 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:31:00,016 - WDM - INFO - Get LATEST chromedriver version for google-chrome
+2024-07-09 11:31:00,387 - WDM - INFO - Driver [C:\Users\Madhusudhan\.wdm\drivers\chromedriver\win64\126.0.6478.126\chromedriver-win32/chromedriver.exe] found in cache
+2024-07-09 11:31:05,783 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:31:05,784 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhan.mothkupally@vrnda.com
+2024-07-09 11:31:05,952 - PageObjects.Login - INFO - Attempting to log in with username: 88011@Madhu
+2024-07-09 11:31:13,611 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:31:13,612 - PageObjects.Login - INFO - Attempting to log in with username: Bhaskers@vrnda.com
+2024-07-09 11:31:13,666 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:31:13,667 - PageObjects.Login - INFO - Attempting to log in with username: Rakesh.narra@vrnda.com
+2024-07-09 11:31:13,698 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:31:13,698 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhan.mothkupally@vrnda.com
+2024-07-09 11:31:13,729 - PageObjects.Login - INFO - Starting test for valid login
+2024-07-09 11:31:13,729 - PageObjects.Login - INFO - Attempting to log in with username: Madhusudhanmothkupally@vrnda.com

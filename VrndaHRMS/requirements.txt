@@ -1,0 +1,8 @@
+pytest~=8.2.1
+selenium~=4.22.0
+openpyxl~=3.1.2
+PyAutoGUI~=0.9.54
+pynput~=1.7.6
+chromedriver-py~=126.0.6478.62
+webdriver-manager~=4.0.1
+pytest-html~=4.1.1

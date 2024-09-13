@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>conftest.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+.s3 { color: #8c8c8c; font-style: italic;}
+.s4 { color: #1750eb;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+conftest.py</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">os.path</span>
+<span class="s0">import </span><span class="s1">time</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.chrome </span><span class="s0">import </span><span class="s1">webdriver</span>
+<span class="s0">import </span><span class="s1">pytest</span>
+<span class="s0">from </span><span class="s1">selenium </span><span class="s0">import </span><span class="s1">webdriver</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.common.by </span><span class="s0">import </span><span class="s1">By</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.support.wait </span><span class="s0">import </span><span class="s1">WebDriverWait</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.support </span><span class="s0">import </span><span class="s1">expected_conditions </span><span class="s0">as </span><span class="s1">EC</span>
+
+<span class="s0">from </span><span class="s1">Utilities </span><span class="s0">import </span><span class="s1">ReadConfigurations, ExcelUtils</span>
+<span class="s0">from </span><span class="s1">selenium.webdriver.chrome.service </span><span class="s0">import </span><span class="s1">Service </span><span class="s0">as </span><span class="s1">ChromeService</span>
+<span class="s0">from </span><span class="s1">webdriver_manager.chrome </span><span class="s0">import </span><span class="s1">ChromeDriverManager</span>
+<span class="s0">from </span><span class="s1">PageObjects.Login </span><span class="s0">import </span><span class="s1">Loginpage</span>
+<span class="s0">from </span><span class="s1">Utilities.ExcelUtils </span><span class="s0">import </span><span class="s1">get_data_from_excel</span>
+
+<span class="s1">driver = </span><span class="s0">None</span>
+
+<span class="s1">@pytest.fixture(scope=</span><span class="s2">&quot;class&quot;</span><span class="s1">)</span>
+<span class="s3"># @pytest.fixture(scope=&quot;session&quot;)</span>
+<span class="s0">def </span><span class="s1">setup_and_teardown(request):</span>
+    <span class="s1">browser = ReadConfigurations.read_config(</span><span class="s2">&quot;basic info&quot;</span><span class="s1">, </span><span class="s2">&quot;browser&quot;</span><span class="s1">)</span>
+    <span class="s0">global </span><span class="s1">driver</span>
+    <span class="s0">if </span><span class="s1">browser.__eq__(</span><span class="s2">&quot;chrome&quot;</span><span class="s1">):</span>
+        <span class="s3"># driver = webdriver.Chrome()</span>
+        <span class="s1">options = webdriver.ChromeOptions()</span>
+        <span class="s1">driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)</span>
+
+    <span class="s0">elif </span><span class="s1">browser.__eq__(</span><span class="s2">&quot;firefox&quot;</span><span class="s1">):</span>
+        <span class="s1">driver = webdriver.Firefox()</span>
+    <span class="s0">elif </span><span class="s1">browser.__eq__(</span><span class="s2">&quot;edge&quot;</span><span class="s1">):</span>
+        <span class="s1">driver = webdriver.Edge()</span>
+    <span class="s0">else</span><span class="s1">:</span>
+        <span class="s1">print(</span><span class="s2">&quot;provide a valid browser name from this list Chrome/Firefox/Edge&quot;</span><span class="s1">)</span>
+    <span class="s1">driver.maximize_window()</span>
+    <span class="s1">web_url = ReadConfigurations.read_config(</span><span class="s2">&quot;basic info&quot;</span><span class="s1">, </span><span class="s2">&quot;url&quot;</span><span class="s1">)</span>
+    <span class="s1">driver.get(web_url)</span>
+    <span class="s1">wait = WebDriverWait(driver, timeout=</span><span class="s4">10</span><span class="s1">)</span>
+
+    <span class="s3"># # login_username = ReadConfigurations.read_config(&quot;login info&quot;, &quot;username&quot;)</span>
+    <span class="s3"># # login_password = ReadConfigurations.read_config(&quot;login info&quot;, &quot;password&quot;)</span>
+    
+    <span class="s3"># --------------------------Necessary Login Code-----------------------------------------------------------------</span>
+    <span class="s3"># excel_data = get_data_from_excel(&quot;Excelfiles/Custodial_cred_dev-v5.xlsx&quot;, &quot;Sheet1&quot;)</span>
+    <span class="s3"># login_username, login_password = excel_data[0]  # Assuming the first row contains the username and password</span>
+    <span class="s3">#</span>
+    <span class="s3"># # Example login steps (replace with your actual login logic)</span>
+    <span class="s3"># username_field = wait.until(EC.presence_of_element_located((By.XPATH, &quot;//input[@formcontrolname='username']&quot;)))</span>
+    <span class="s3"># password_field = wait.until(EC.presence_of_element_located((By.XPATH, &quot;//input[@formcontrolname='password']&quot;)))</span>
+    <span class="s3"># login_button = wait.until(EC.element_to_be_clickable((By.XPATH, &quot;(//vrnda-button)[1]&quot;)))</span>
+    <span class="s3">#</span>
+    <span class="s3"># username_field.send_keys(login_username)</span>
+    <span class="s3"># password_field.send_keys(login_password)</span>
+    <span class="s3"># login_button.click()</span>
+    <span class="s3"># --------------------------Necessary Login Code-----------------------------------------------------------------</span>
+
+
+    <span class="s1">request.cls.driver = driver</span>
+    <span class="s1">request.cls.wait = wait</span>
+    <span class="s0">yield </span><span class="s1">driver</span>
+    <span class="s1">driver.quit()</span>
+
+    <span class="s3"># driver.execute_script(&quot;window.open('about:blank', '_blank');&quot;)</span>
+    <span class="s3"># driver.switch_to.window(driver.window_handles[-1])</span>
+    <span class="s3"># approver_username = ReadConfigurations.read_config(&quot;approver info&quot;, &quot;username&quot;)</span>
+    <span class="s3"># approver_password = ReadConfigurations.read_config(&quot;approver info&quot;, &quot;password&quot;)</span>
+    <span class="s3"># web_url = ReadConfigurations.read_config(&quot;approver info&quot;, &quot;url&quot;)</span>
+    <span class="s3"># driver.get(web_url)</span>
+    <span class="s3">#</span>
+    <span class="s3"># username_field = wait.until(EC.presence_of_element_located((By.XPATH, &quot;//input[@formcontrolname='username']&quot;)))</span>
+    <span class="s3"># password_field = wait.until(EC.presence_of_element_located((By.XPATH, &quot;//input[@formcontrolname='password']&quot;)))</span>
+    <span class="s3"># login_button = wait.until(EC.element_to_be_clickable((By.XPATH, &quot;(//vrnda-button)[1]&quot;)))</span>
+    <span class="s3">#</span>
+    <span class="s3"># username_field.send_keys(approver_username)</span>
+    <span class="s3"># password_field.send_keys(approver_password)</span>
+    <span class="s3"># login_button.click()</span>
+    <span class="s3">#</span>
+    <span class="s3"># driver.switch_to.window(driver.window_handles[0])</span>
+    <span class="s3"># driver.quit()</span>
+
+<span class="s3"># #</span>
+<span class="s3"># @pytest.hookimpl(hookwrapper=True)</span>
+<span class="s3"># def pytest_runtest_makereport(item):</span>
+<span class="s3">#     pytest_html = item.config.pluginmanager.getplugin(&quot;html&quot;)</span>
+<span class="s3">#     outcome = yield</span>
+<span class="s3">#     report = outcome.get_result()</span>
+<span class="s3">#     extra = getattr(report, &quot;extra&quot;, [])</span>
+<span class="s3">#     if report.when == &quot;call&quot;:</span>
+<span class="s3">#         # always add url to report</span>
+<span class="s3">#         extra.append(pytest_html.extras.url(&quot;http://10.11.12.167:5006/#/authentication/signin&quot;))</span>
+<span class="s3">#         xfail = hasattr(report, &quot;wasxfail&quot;)</span>
+<span class="s3">#         if (report.skipped and xfail) or (report.failed and not xfail):</span>
+<span class="s3">#             # only add additional html on failure</span>
+<span class="s3">#             report_directory = os.path.dirname(item.config.option.htmlpath)</span>
+<span class="s3">#             file_name = str(int(round(time.time() * 1000))) + &quot;.png&quot;</span>
+<span class="s3">#             # file_name = report.nodeid.replace(&quot;::&quot;, &quot;_&quot;) + &quot;.png&quot;</span>
+<span class="s3">#             destinationFile = os.path.join(report_directory, file_name)</span>
+<span class="s3">#             driver.save_screenshot(destinationFile)</span>
+<span class="s3">#             if file_name:</span>
+<span class="s3">#                 html = '&lt;div&gt;&lt;img src=&quot;%s&quot; alt=&quot;screenshot&quot; style=&quot;width:300px;height=200px&quot; ' \</span>
+<span class="s3">#                        'onclick=&quot;window.open(this.src)&quot; align=&quot;right&quot;/&gt;&lt;/div&gt;'%file_name</span>
+<span class="s3">#             extra.append(pytest_html.extras.html(html))</span>
+<span class="s3">#         report.extra = extra</span>
+
+
+</pre>
+</body>
+</html>
